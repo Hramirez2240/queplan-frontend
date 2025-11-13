@@ -15,8 +15,10 @@ export interface DbChangePayload {
 
 export interface UiChangeRow {
   table: string;
-  column: string;
-  oldValue: string;
-  newValue: string;
+  oldName?: string;
+  newName?: string;
+  oldGender?: string;
+  newGender?: string;
   changedAt?: string;
+  friendId?: string;
 }

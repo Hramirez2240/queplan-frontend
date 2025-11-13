@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "queplan-frontend:build:production"
+              "buildTarget": "queplan-frontend:build:production"
             },
             "development": {
-              "browserTarget": "queplan-frontend:build:development"
+              "buildTarget": "queplan-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "queplan-frontend:build"
+            "buildTarget": "queplan-frontend:build"
           }
         },
         "test": {

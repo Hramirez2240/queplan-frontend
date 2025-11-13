@@ -3,6 +3,14 @@
   <mat-card-subtitle>
     Mostrando tabla, columna modificada, valor anterior y nuevo.
   </mat-card-subtitle>
+  <mat-card-content>
+    <h3>Friends</h3>
+
+    <ng-template #noFriends>
+      <p>No hay friends para mostrar.</p>
+    </ng-template>
+
+  </mat-card-content>
 
   <mat-card-content>
     <table mat-table [dataSource]="data" class="mat-elevation-z2 fullwidth">
@@ -16,19 +24,24 @@
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="column">
-        <th mat-header-cell *matHeaderCellDef> Columna </th>
-        <td mat-cell *matCellDef="let r">{{ r.column }}</td>
+      <ng-container matColumnDef="oldName">
+        <th mat-header-cell *matHeaderCellDef> Valor anterior Nombre </th>
+        <td mat-cell *matCellDef="let r">{{ r.oldName || '—' }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="old">
-        <th mat-header-cell *matHeaderCellDef> Valor anterior </th>
-        <td mat-cell *matCellDef="let r">{{ r.oldValue }}</td>
+      <ng-container matColumnDef="oldGender">
+        <th mat-header-cell *matHeaderCellDef> Valor anterior Género </th>
+        <td mat-cell *matCellDef="let r">{{ r.oldGender || '—' }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="new">
-        <th mat-header-cell *matHeaderCellDef> Valor nuevo </th>
-        <td mat-cell *matCellDef="let r"><b>{{ r.newValue }}</b></td>
+      <ng-container matColumnDef="newName">
+        <th mat-header-cell *matHeaderCellDef> Valor nuevo Nombre </th>
+        <td mat-cell *matCellDef="let r"><b>{{ r.newName || '—' }}</b></td>
+      </ng-container>
+
+      <ng-container matColumnDef="newGender">
+        <th mat-header-cell *matHeaderCellDef> Valor nuevo Género </th>
+        <td mat-cell *matCellDef="let r"><b>{{ r.newGender || '—' }}</b></td>
       </ng-container>
 
       <ng-container matColumnDef="when">

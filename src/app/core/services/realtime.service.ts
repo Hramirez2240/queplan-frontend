@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { io, Socket } from 'socket.io-client';
 import { Observable, map } from 'rxjs';
-import { DbChangePayload, UiChangeRow } from './models/db-change-event.model';
-import { environment } from '../../environments/environment';
+import { DbChangePayload, UiChangeRow } from '../models/change-event.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class RealtimeService {
@@ -69,6 +69,7 @@ export class RealtimeService {
     );
   }
 }
+
 function stringifyValue(v: any): string {
   if (v === null || v === undefined) return '';
   if (typeof v === 'object') return JSON.stringify(v);
